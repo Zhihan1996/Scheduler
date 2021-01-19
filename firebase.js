@@ -1,5 +1,6 @@
 import * as firebase from 'firebase';
 
+import 'firebase/auth';
 import "firebase/database";
 
 const firebaseConfig = {
@@ -14,5 +15,7 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+// firebase.auth().signInWithEmailAndPassword(email, password);
+// firebase.auth().createUserWithEmailAndPassword(email, password);
 
 export { firebase };

@@ -14,7 +14,6 @@ const Banner = ({title}) => (
 
 const ScheduleScreen = ({navigation}) => {
   const [schedule, setSchedule] = useState({ title: '', courses: [] });
-//   const url = 'https://courses.cs.northwestern.edu/394/data/cs-courses.php';
 
   const user = useContext(UserContext);
   const canEdit = user && user.role === 'admin';
@@ -39,15 +38,6 @@ const ScheduleScreen = ({navigation}) => {
     navigation.navigate(canEdit ? 'CourseEditScreen' : 'CourseDetailScreen', {course});
   };
 
-//   useEffect(() => {
-//     const fetchSchedule = async () => {
-//       const response = await fetch(url);
-//       if (!response.ok) throw response;
-//       const json = await response.json();
-//       setSchedule(json);
-//     }
-//     fetchSchedule();
-//   }, [])
 
   return (
     <SafeAreaView style={styles.container}>
